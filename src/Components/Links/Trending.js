@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Search from "../Search";
 
-class Allmovies extends Component {
+class Trending extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,4 +55,4 @@ class Allmovies extends Component {
   }
 }
 
-export default Allmovies;
+export default Trending;

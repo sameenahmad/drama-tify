@@ -28,12 +28,13 @@
   align-items: center;
   padding: 1rem 1rem;
   margin: 1rem 1.5rem 3rem 0rem;
+  color: white;
 }
 .feature-Container {
   display: flex;
   flex-direction: column;
   margin: 1rem 1.5rem 2rem 0rem;
-  width:18%;
+  width: 18%;
   border-right: 1px solid white;
 }
 .featureList {
@@ -43,7 +44,6 @@
   display: flex;
   margin: 1rem;
   align-items: center;
-
 }
 .feature-Container ul img {
   margin-right: 1.2rem;
@@ -59,7 +59,7 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-
+  background-color: red;
 }
 .header-movie-dashboard {
   display: flex;
@@ -68,7 +68,7 @@
   align-items: center;
   width: 95%;
   margin-bottom: 1rem;
-  margin-top: 3rem; 
+  margin-top: 3rem;
 }
 .search-Btn {
   background-color: #35967a;
@@ -126,5 +126,4 @@
   width: 50%;
   align-items: center;
   margin-right: 2rem;
-
 }

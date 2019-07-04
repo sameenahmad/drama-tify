@@ -11,39 +11,39 @@ import todownload from "./Icons/todownload.png";
 import watched from "./Icons/watched.png";
 import all from "./Icons/all.png";
 import ProfileAvatar from "./ProfileAvatar";
-import Home from './Links/Home'
-import home from './Icons/home.png'
+import Trending from "./Links/Trending";
+import home from "./Icons/home.png";
 
 const routes = [
   {
     path: "/home",
-    sidebar: () => <div></div>,
-    main: () => <Home />
+    sidebar: () => <div />,
+    main: () => <Trending />
   },
   {
     path: "/all",
     exact: true,
-    sidebar: () => <div></div>,
+    sidebar: () => <div />,
     main: () => <Allmovies />
   },
   {
     path: "/collection",
-    sidebar: () => <div></div>,
+    sidebar: () => <div />,
     main: () => <Collection />
   },
   {
     path: "/downloaded",
-    sidebar: () => <div></div>,
+    sidebar: () => <div />,
     main: () => <Downloaded />
   },
   {
     path: "/todownload",
-    sidebar: () => <div></div>,
-    main: () => <Todownload/>
+    sidebar: () => <div />,
+    main: () => <Todownload />
   },
   {
     path: "/watched",
-    sidebar: () => <div></div>,
+    sidebar: () => <div />,
     main: () => <Watched />
   }
 ];
@@ -53,14 +53,11 @@ function SidebarExample() {
     <Router>
       <div className="feature-Container">
         <ul className="featureList">
-        <li>
-            <ProfileAvatar/>
-            </li>
+          <li>
+            <ProfileAvatar />
+          </li>
 
-            <Link
-            style={{ textDecoration: "none", color: "#6e7880" }}
-            to="/home"
-          > 
+          <Link style={{ textDecoration: "none", color: "#6e7880" }} to="/home">
             <li>
               <img src={home} />
               Popular
@@ -78,7 +75,7 @@ function SidebarExample() {
           <Link
             style={{ textDecoration: "none", color: "#6e7880" }}
             to="/collection"
-          > 
+          >
             <li>
               <img src={collection} />
               My Collection
@@ -117,7 +114,6 @@ function SidebarExample() {
         </ul>
 
         {routes.map((route, index) => (
-      
           <Route
             path={route.path}
             exact={route.exact}
@@ -125,7 +121,6 @@ function SidebarExample() {
           />
         ))}
       </div>
-
 
       <div style={{ flex: 1, padding: "10px" }}>
         {routes.map((route, index) => (
