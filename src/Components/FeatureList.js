@@ -21,7 +21,7 @@ class FeatureList extends Component {
           </Link>
 
           <Link
-            style={{ textDecoration: "none", color: "#6e7880" }}
+            style={{ textDecoration: "none", color: "#6e7880"}} className='link'
             to="/collection"
           >
             <li>
