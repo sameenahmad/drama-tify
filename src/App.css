@@ -13,13 +13,14 @@
   font-family: "Nunito";
   font-size: 0.8rem;
 }
-.user-Container {
+/* .user-Container {
   display: flex;
   flex-direction: column;
   width: 18%;
   align-items: center;
   border-right: 1px solid white;
-}
+  background-color: green;
+} */
 
 .profile-Container {
   display: flex;
@@ -32,6 +33,8 @@
   display: flex;
   flex-direction: column;
   margin: 1rem 1.5rem 2rem 0rem;
+  width:18%;
+  border-right: 1px solid white;
 }
 .featureList {
   list-style: none;
@@ -52,17 +55,19 @@
 
 .movie-Container {
   display: flex;
-  width: 70%;
+  width: 100%;
   flex-direction: column;
-  margin: 1rem 2rem 2rem 5rem;
+  align-items: center;
+
 }
 .header-movie-dashboard {
   display: flex;
   /* padding: 0.1rem 1rem; */
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin-bottom: 1.5rem;
+  width: 95%;
+  margin-bottom: 1rem;
+  margin-top: 3rem; 
 }
 .search-Btn {
   background-color: #35967a;
@@ -70,6 +75,7 @@
   padding: 0.5rem 0.5rem;
   border: none;
   outline: none;
+  margin-right: 2rem;
 }
 .poster-Container {
   display: flex;
@@ -118,4 +124,6 @@
   justify-content: flex-end;
   width: 50%;
   align-items: center;
+  margin-right: 2rem;
+
 }

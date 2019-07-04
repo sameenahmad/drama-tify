@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Search from "../Search";
+
 class Allmovies extends Component {
   constructor(props) {
     super(props);
@@ -25,24 +27,30 @@ class Allmovies extends Component {
 
   render() {
     return (
-      <div className="poster-Container">
-        {this.state.results.map(e => (
-          <div className="poster-Item">
-            <img
-              className="imgTag"
-              src={`http://image.tmdb.org/t/p/w185/${e.poster_path}`}
-            />
-            <button className="rating-Btn"> {e.vote_average}</button>
-            <h3>{e.title}</h3>
+      <div className='movie-Container' >
+        <div className="header-movie-dashboard">
+          <h2 style={{ color: "white" }}> Trending Movies</h2>
+          <Search />
+        </div>
+        <div className="poster-Container">
+          {this.state.results.map(e => (
+            <div className="poster-Item">
+              <img
+                className="imgTag"
+                src={`http://image.tmdb.org/t/p/w185/${e.poster_path}`}
+              />
+              <button className="rating-Btn"> {e.vote_average}</button>
+              <h3>{e.title}</h3>
 
-            {e.genre_ids.map(id => {
-              return this.state.genres.map(item => {
-                return item.id == id ? <span>{item.name} </span> : '';
-              });
-            })}
-          </div>
-        ))}
-      </div>
+              {e.genre_ids.map(id => {
+                return this.state.genres.map(item => {
+                  return item.id == id ? <span>{item.name} </span> : "";
+                });
+              })}
+            </div>
+          ))}
+        </div>
+      </div >
     );
   }
 }
