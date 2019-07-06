@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 class App extends Component {
   render() {
     return (
-      <div className="app-Container">
+      <div className='app-Container'>
         <Sidebar />
       </div>
     );

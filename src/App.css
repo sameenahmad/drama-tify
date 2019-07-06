@@ -59,7 +59,6 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  background-color: red;
 }
 .header-movie-dashboard {
   display: flex;
@@ -67,8 +66,10 @@
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin-top: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
 }
 .search-Btn {
   background-color: #35967a;
@@ -98,7 +99,6 @@
 .imgTag {
   /* width: 70%;
   height: 230px; */
-  margin-top: 3rem;
   border-radius: 5%;
 }
 .rating-Btn {
@@ -126,4 +126,114 @@
   width: 50%;
   align-items: center;
   margin-right: 2rem;
+}
+
+
+.heading-Allmovies {
+  display: flex;
+  width: 95%;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  color: white;
+}
+.all-Movie-Item {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-right: 2rem;
+  /* align-items: center; */
+}
+.all-Movie-Item h4:hover {
+  color: white;
+}
+.all-Movie-Container
+{
+  display:flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+#title-Container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+
+}
+/* .movie-Title :hover{
+cursor: pointer;
+color: white;  
+} */
+
+.tooltip {
+  position: relative;
+  display: flex;
+}
+/* Tooltip container */
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  width: 120px;
+  top: -5px;
+  left: 105%; 
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#title-Container img {
+  width: 30px;
+  height: 30px;
+}
+
+.pagination {
+  display: flex;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.pagination > .active > a {
+  z-index: 3;
+  color: #fff;
+  background-color: #6e7880;
+  border-color: #6e7880;
+  cursor: default;
+}
+.pagination > li > a {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: white;
+  background-color: #2b3c46;
+  border: 1px solid #6e7880;
+  margin-left: -1px;
+}
+.text-center {
+  text-align: center;
+}
+
+.pagination > li {
+  display: inline;
+}
+.pagination > .disabled > a {
+  color: #777;
+  background-color: #2b3c46;
+  border-color: #6e7880;
+  cursor: not-allowed;
+}
+.pagination > li :hover {
+  background-color: #6e7880;
 }

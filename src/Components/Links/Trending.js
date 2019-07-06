@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Search from "../Search";
+
 
 class Trending extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Trending extends Component {
   componentDidMount() {
     (async () => {
       const rawResponse = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?api_key=f8c35c5728caab4e51e98b4401cff240&language=en-US&page=1"
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=f8c35c5728caab4e51e98b4401cff240"
       );
       const genreResponse = await fetch(
         "https://api.themoviedb.org/3/genre/movie/list?api_key=f8c35c5728caab4e51e98b4401cff240&language=en-US"
@@ -30,7 +30,7 @@ class Trending extends Component {
       <div className='movie-Container' >
         <div className="header-movie-dashboard">
           <h2 style={{ color: "white" }}> Trending Movies</h2>
-          <Search />
+        
         </div>
         <div className="poster-Container">
           {this.state.results.map(e => (
