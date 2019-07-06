@@ -22,12 +22,7 @@ const routes = [
     sidebar: () => <div />,
     main: () => <Home />
   },
-  {
-    exact: true,
-    path: "/popular",
-    sidebar: () => <div />,
-    main: () => <Trending />
-  },
+
   {
     path: "/toprated",
     exact: true,
@@ -64,16 +59,6 @@ function SidebarExample() {
           <Link to="/">
             <li>
               <ProfileAvatar />
-            </li>
-          </Link>
-
-          <Link
-            style={{ textDecoration: "none", color: "#6e7880" }}
-            to="/popular"
-          >
-            <li>
-              <img src={home} />
-              Trending
             </li>
           </Link>
 

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import Search from "./Components/Search"
+import Search from "./Components/Search";
 import Sidebar from "./Components/Sidebar";
 class App extends Component {
   render() {
     return (
-      <div className='app-Container'>
-<Sidebar/>
+      <div className="app-Container">
+        <Sidebar />
       </div>
     );
   }

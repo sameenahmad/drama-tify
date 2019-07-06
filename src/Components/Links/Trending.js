@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Search from '../Search'
+import Search from "../Search";
 
 class Trending extends Component {
   constructor(props) {
@@ -27,12 +27,9 @@ class Trending extends Component {
 
   render() {
     return (
-      
-      <div className='movie-Container' >
+      <div className="movie-Container">
         <div className="header-movie-dashboard">
           <h2 style={{ color: "white" }}> Trending Movies</h2>
-          <Search/>
-
         </div>
         <div className="poster-Container">
           {this.state.results.map(e => (
@@ -52,7 +49,7 @@ class Trending extends Component {
             </div>
           ))}
         </div>
-      </div >
+      </div>
     );
   }
 }
