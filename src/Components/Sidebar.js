@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Allmovies from "./Links/Allmovies";
+import TopRated from "./Links/TopRated";
 import Collection from "./Links/Collection";
 import Downloaded from "./Links/Downloaded";
 import Todownload from "./Links/Todownload";
@@ -13,18 +13,26 @@ import all from "./Icons/all.png";
 import ProfileAvatar from "./ProfileAvatar";
 import Trending from "./Links/Trending";
 import home from "./Icons/home.png";
+import Home from "./Links/Home";
 
 const routes = [
   {
-    path: "/home",
+    exact: true,
+    path: "/",
+    sidebar: () => <div />,
+    main: () => <Home />
+  },
+  {
+    exact: true,
+    path: "/popular",
     sidebar: () => <div />,
     main: () => <Trending />
   },
   {
-    path: "/all",
+    path: "/toprated",
     exact: true,
     sidebar: () => <div />,
-    main: () => <Allmovies />
+    main: () => <TopRated />
   },
   {
     path: "/collection",
@@ -53,22 +61,30 @@ function SidebarExample() {
     <Router>
       <div className="feature-Container">
         <ul className="featureList">
-          <li>
-            <ProfileAvatar />
-          </li>
-
-          <Link style={{ textDecoration: "none", color: "#6e7880" }} to="/home">
+          <Link to="/">
             <li>
-              <img src={home} />
-              Popular
+              <ProfileAvatar />
             </li>
           </Link>
 
-          <Link style={{ textDecoration: "none", color: "#6e7880" }} to="/all">
+          <Link
+            style={{ textDecoration: "none", color: "#6e7880" }}
+            to="/popular"
+          >
+            <li>
+              <img src={home} />
+              Trending
+            </li>
+          </Link>
+
+          <Link
+            style={{ textDecoration: "none", color: "#6e7880" }}
+            to="/toprated"
+          >
             {" "}
             <li>
               <img src={all} />
-              All
+              Top Rated
             </li>
           </Link>
 

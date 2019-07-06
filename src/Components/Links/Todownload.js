@@ -42,7 +42,7 @@ class Todownload extends Component {
                       marginLeft: "1rem"
                     }}
                   >
-                    <h4>{item.title}</h4>
+                    <h4 style={{color:'white'}}>{item.title}</h4>
                     <p>Release Date: {item.release_date}</p>
                     <span
                       style={{

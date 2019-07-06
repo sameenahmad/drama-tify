@@ -9,7 +9,7 @@ class Watched extends Component {
     };
   }
   async getWatched() {
-    const watched = ls.get("todownload");
+    const watched = ls.get("watched");
     this.setState({ watched: watched });
   }
 
@@ -42,7 +42,7 @@ class Watched extends Component {
                       marginLeft: "1rem"
                     }}
                   >
-                    <h4>{item.title}</h4>
+                    <h4 style={{color:'white'}}>{item.title}</h4>
                     <p>Release Date: {item.release_date}</p>
                     <span
                       style={{

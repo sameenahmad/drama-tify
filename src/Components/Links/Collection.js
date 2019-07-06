@@ -10,7 +10,7 @@ class Collection extends Component {
   }
   async getCollection() {
     const collection = ls.get("collection");
-    this.setState({ collection: collection || [] });
+    this.setState({ collection: collection  });
   }
 
   componentDidMount() {
@@ -42,7 +42,7 @@ class Collection extends Component {
                       marginLeft: "1rem"
                     }}
                   >
-                    <h4>{item.title}</h4>
+                    <h4 style={{color:'white'}}>{item.title}</h4>
                     <span
                       style={{
                         display: "flex",

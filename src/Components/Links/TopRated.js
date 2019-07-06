@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Search from "../Search";
 import Pagination from "react-js-pagination";
 import MovieList from "./MovieList";
 import ls from "local-storage";
@@ -7,13 +6,18 @@ import ls from "local-storage";
 class Allmovies extends Component {
   constructor(props) {
     super(props);
+    const collection = ls.get("collection");
+    const downloaded = ls.get("downloaded");
+    const todownload = ls.get("todownload");
+    const watched = ls.get("watched");
+
     this.state = {
       activePage: 1,
       results: [],
-      collection: [],
-      downloaded: [],
-      todownload: [],
-      watched: []
+      collection: collection,
+      downloaded: downloaded,
+      todownload: todownload,
+      watched: watched
     };
   }
   async fetchData(page) {
@@ -44,39 +48,45 @@ class Allmovies extends Component {
       // Save to local Storage Collection
       case "collection":
         if (!this.state.collection.includes(item)) {
-          this.state.collection.push(item);
-          console.log("New Collection State", this.state.collection);
-          ls.set("collection", this.state.collection);
-        } else console.log("item already exists ");
+          const currentState = this.state.collection.slice(0);
+          const newStateCollection = [...currentState, item];
+          this.setState({ collection: newStateCollection }, () =>
+            ls.set("collection", this.state.collection)
+          );
+        }
         break;
 
       // Save to Downloaded
       case "downloaded":
         if (!this.state.downloaded.includes(item)) {
-          this.state.downloaded.push(item);
-          console.log("New Downloaded State", this.state.downloaded);
-          ls.set("downloaded", this.state.downloaded);
-        } else console.log("item already exists ");
+          const currentStateDownloaded = this.state.downloaded.slice(0);
+          const newStateDownloaded = [...currentStateDownloaded, item];
+          this.setState({ downloaded: newStateDownloaded }, () =>
+            ls.set("downloaded", this.state.downloaded)
+          );
+        }
         break;
       //Save to Todownload
 
       case "todownload":
         if (!this.state.todownload.includes(item)) {
-          this.state.todownload.push(item);
-          console.log("New todownload State", this.state.todownload);
-          ls.set("todownload", this.state.todownload);
-        } else console.log("item already exists ");
-
+          const currentStateTodownload = this.state.todownload.slice(0);
+          const newStateTodownload = [...currentStateTodownload, item];
+          this.setState({ todownload: newStateTodownload }, () =>
+            ls.set("todownload", this.state.todownload)
+          );
+        }
         break;
       //Save to watched
 
       case "watched":
         if (!this.state.watched.includes(item)) {
-          this.state.watched.push(item);
-          console.log("New watched State", this.state.watched);
-          ls.set("watched", this.state.watched);
-        } else console.log("item already exists ");
-
+          const currentStateWatched = this.state.watched.slice(0);
+          const newStateWatched = [...currentStateWatched, item];
+          this.setState({ watched: newStateWatched }, () =>
+            ls.set("watched", this.state.watched)
+          );
+        }
         break;
     }
   };
@@ -87,7 +97,6 @@ class Allmovies extends Component {
         <div className="movie-Container">
           <div className="header-movie-dashboard">
             <h2 style={{ color: "white" }}> Top Rated Movies</h2>
-            <Search />
           </div>
           <div className="heading-Allmovies">
             <h3> Title</h3>
