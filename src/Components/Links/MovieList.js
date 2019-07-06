@@ -51,6 +51,7 @@ class MovieList extends Component {
             id="title-Container"
             style={{ justifyContent: "Center" }}
           >
+            
             <img
               src={collection}
               title="Collection"
