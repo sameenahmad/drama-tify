@@ -12,6 +12,7 @@
   color: #6e7880;
   font-family: "Nunito";
   font-size: 0.8rem;
+  min-height: 100vh;
 }
 /* .user-Container {
   display: flex;
@@ -59,6 +60,8 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
+  color: #6e7880;
+
 }
 .header-movie-dashboard {
   display: flex;
@@ -67,7 +70,7 @@
   align-items: center;
   width: 95%;
   margin-bottom: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid gray;
 }
@@ -121,13 +124,12 @@
   border-radius: 2%;
 }
 .search-Container {
-  display: flex;
-  justify-content: flex-end;
-  width: 50%;
-  align-items: center;
   margin-right: 2rem;
+  display: flex;
+  width: 50%;
+  margin-top: 1.5rem;
+  align-self: flex-end;
 }
-
 
 .heading-Allmovies {
   display: flex;
@@ -145,12 +147,11 @@
   margin-right: 2rem;
   /* align-items: center; */
 }
-.all-Movie-Item h4:hover{
+.all-Movie-Item h4:hover {
   color: white;
 }
-.all-Movie-Container
-{
-  display:flex;
+.all-Movie-Container {
+  display: flex;
   justify-content: space-around;
   margin-top: 1rem;
 }
@@ -158,6 +159,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
+  position:relative;
 
 }
 /* .movie-Title :hover{
@@ -181,7 +183,7 @@ color: white;
   border-radius: 6px;
   width: 120px;
   top: -5px;
-  left: 105%; 
+  left: 105%;
   position: absolute;
   z-index: 1;
 }
@@ -236,4 +238,27 @@ color: white;
 }
 .pagination > li :hover {
   background-color: #6e7880;
+}
+ .remove-Btn
+ {
+  position: absolute;
+   left: 93%;
+    top: 5%;
+    background-color: #2b3c46;
+    border: 1px solid #6e7880;
+    color: white;
+    padding:0.5rem 0.5rem;
+    outline: none;
+ }
+ .btn-Success
+ {
+height: 30px;
+background-color: #2b3c46;
+border:none;
+outline: none;
+}
+.btn-Success :hover{
+  color:white;
+  cursor: pointer;
+  border: 1px solid #6e7880;
 }

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Trending from "./Trending";
 import SearchList from "./SearchList";
-import search from "../Icons/search.png"
+import search from "../Icons/search.png";
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       show: true,
-      value: ""
+      value: "",
+      results: []
     };
   }
 
@@ -15,12 +16,25 @@ class Home extends Component {
     this.setState({ value: e.target.value });
   };
   handleSearch = e => {
-    this.setState({ value: this.state.value, show: false });
+    this.state.value
+      ? this.setState({ value: this.state.value, show: false }, () => {
+          this.fetchMovie();
+        })
+      : window.location.reload();
   };
+  async fetchMovie() {
+    const rawResponse = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=f8c35c5728caab4e51e98b4401cff240&query=${
+        this.state.value
+      }`
+    );
+    const response = await rawResponse.json();
+    this.setState({ results: response.results });
+  }
 
   render() {
     return (
-      <div>
+      <div className="movie-Container">
         <div className="search-Container">
           <input
             type="text"
@@ -38,7 +52,7 @@ class Home extends Component {
         {this.state.show ? (
           <Trending />
         ) : (
-          <SearchList value={this.state.value} />
+          <SearchList results={this.state.results} />
         )}
       </div>
     );

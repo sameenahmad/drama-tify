@@ -4,12 +4,26 @@ import downloaded from "../Icons/downloaded.png";
 import todownload from "../Icons/todownload.png";
 import watched from "../Icons/watched.png";
 import star from "../Icons/star.png";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 
 class MovieList extends Component {
   constructor(props) {
     super(props);
   }
 
+  createNotification = (type,action)  => {
+    return () => {
+      switch (type) {
+        case "success":
+          NotificationManager.success(`Successfully Added to ${action}`, "",2000);
+          console.log("Name is", action)
+          break;
+      }
+    };
+  };
   render() {
     return this.props.results.map(item => {
       return (
@@ -51,27 +65,48 @@ class MovieList extends Component {
             id="title-Container"
             style={{ justifyContent: "Center" }}
           >
-            
-            <img
-              src={collection}
-              title="Collection"
-              onClick={this.props.handleClick.bind(this, "collection", item)}
-            />{" "}
+               
+            <button
+              className="btn-Success"
+              onClick={this.createNotification("success", "Collection")}
+             >
+              {" "}
+              <img
+                src={collection}
+                title="Collection"
+                onClick={this.props.handleClick.bind(this, "collection", item)}
+              />{" "}
+            </button>
+            <button
+              className="btn-Success"
+              onClick={this.createNotification("success", "Downloaded")}
+             >
             <img
               src={downloaded}
               title="Downloaded"
-              onClick={this.props.handleClick.bind(this, "downloaded",item)}
+              onClick={this.props.handleClick.bind(this, "downloaded", item)}
             />{" "}
+            </button>
+            <button
+              className="btn-Success"
+              onClick={this.createNotification("success", "Todownload")}
+             >
             <img
               src={todownload}
               title="To Download"
-              onClick={this.props.handleClick.bind(this, "todownload",item)}
+              onClick={this.props.handleClick.bind(this, "todownload", item)}
             />{" "}
+            </button>
+            <button
+              className="btn-Success"
+              onClick={this.createNotification("success", "Watched")}
+             >
             <img
               src={watched}
               title="Watched"
               onClick={this.props.handleClick.bind(this, "watched", item)}
             />
+            </button>
           </div>
         </div>
       );

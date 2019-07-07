@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Pagination from "react-js-pagination";
 import MovieList from "./MovieList";
 import ls from "local-storage";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 
 class Allmovies extends Component {
   constructor(props) {
@@ -53,7 +57,7 @@ class Allmovies extends Component {
           this.setState({ collection: newStateCollection }, () =>
             ls.set("collection", this.state.collection)
           );
-        }
+        } else ls.set("collection", this.state.collection);
         break;
 
       // Save to Downloaded
@@ -65,6 +69,7 @@ class Allmovies extends Component {
             ls.set("downloaded", this.state.downloaded)
           );
         }
+        else ls.set("downloaded", this.state.downloaded);
         break;
       //Save to Todownload
 
@@ -76,6 +81,7 @@ class Allmovies extends Component {
             ls.set("todownload", this.state.todownload)
           );
         }
+        else ls.set("todownload", this.state.todownload);
         break;
       //Save to watched
 
@@ -87,6 +93,7 @@ class Allmovies extends Component {
             ls.set("watched", this.state.watched)
           );
         }
+        else ls.set("watched", this.state.watched);
         break;
     }
   };
@@ -97,6 +104,7 @@ class Allmovies extends Component {
         <div className="movie-Container">
           <div className="header-movie-dashboard">
             <h2 style={{ color: "white" }}> Top Rated Movies</h2>
+            <NotificationContainer />
           </div>
           <div className="heading-Allmovies">
             <h3> Title</h3>
