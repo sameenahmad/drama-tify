@@ -18,10 +18,10 @@ class Allmovies extends Component {
     this.state = {
       activePage: 1,
       results: [],
-      collection: collection,
-      downloaded: downloaded,
-      todownload: todownload,
-      watched: watched
+      collection: collection || [],
+      downloaded: downloaded || [],
+      todownload: todownload || [],
+      watched: watched || []
     };
   }
   async fetchData(page) {
@@ -68,8 +68,7 @@ class Allmovies extends Component {
           this.setState({ downloaded: newStateDownloaded }, () =>
             ls.set("downloaded", this.state.downloaded)
           );
-        }
-        else ls.set("downloaded", this.state.downloaded);
+        } else ls.set("downloaded", this.state.downloaded);
         break;
       //Save to Todownload
 
@@ -80,8 +79,7 @@ class Allmovies extends Component {
           this.setState({ todownload: newStateTodownload }, () =>
             ls.set("todownload", this.state.todownload)
           );
-        }
-        else ls.set("todownload", this.state.todownload);
+        } else ls.set("todownload", this.state.todownload);
         break;
       //Save to watched
 
@@ -92,8 +90,7 @@ class Allmovies extends Component {
           this.setState({ watched: newStateWatched }, () =>
             ls.set("watched", this.state.watched)
           );
-        }
-        else ls.set("watched", this.state.watched);
+        } else ls.set("watched", this.state.watched);
         break;
     }
   };
