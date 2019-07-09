@@ -36,7 +36,7 @@
   flex-direction: column;
   margin: 1rem 1.5rem 2rem 0rem;
   width: 18%;
-  border-right: 1px solid white;
+  border-right: 0.5px solid #6e7880;
 }
 .featureList {
   list-style: none;

@@ -56,9 +56,18 @@ function SidebarExample() {
     <Router>
       <div className="feature-Container">
         <ul className="featureList">
-          <Link to="/">
+       
             <li>
               <ProfileAvatar />
+            </li>
+            <Link
+            style={{ textDecoration: "none", color: "#6e7880" }}
+            to="/"
+          >
+            {" "}
+            <li>
+              <img src={home} />
+            Home
             </li>
           </Link>
 

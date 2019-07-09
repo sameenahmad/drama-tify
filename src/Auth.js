@@ -84,6 +84,7 @@ class SignInScreen extends React.Component {
     return (
       <div className="app-Container">
         <Sidebar />
+
         <a style={{margin: '1rem 1rem', color:'white', height:'20px'}} onClick={() => firebase.auth().signOut()}>Sign-out</a>
       </div>
     );
